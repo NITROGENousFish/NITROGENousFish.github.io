@@ -23,30 +23,32 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="一个兴趣使然的小伙汁">
-<meta property="og:type" content="website">
-<meta property="og:title" content="NitrogenousFish&#39;s Site">
-<meta property="og:url" content="http://example.com/index.html">
+<meta name="description" content="[toc]  引言 这个教程是  必要的下载 第一个是自己，第二个是服务器，第三个是弄Form和文件的 123pip install fastapipip install uvicorn[standard]pip install python-multipart  如何启动应用 1uvicorn main:app --reload 其中main是你的py文件名称，可以是绝对路径，app是在内部注册">
+<meta property="og:type" content="article">
+<meta property="og:title" content="a fast view of FastAPI">
+<meta property="og:url" content="http://example.com/2021/01/07/a-fast-view-of-FastAPI/index.html">
 <meta property="og:site_name" content="NitrogenousFish&#39;s Site">
-<meta property="og:description" content="一个兴趣使然的小伙汁">
+<meta property="og:description" content="[toc]  引言 这个教程是  必要的下载 第一个是自己，第二个是服务器，第三个是弄Form和文件的 123pip install fastapipip install uvicorn[standard]pip install python-multipart  如何启动应用 1uvicorn main:app --reload 其中main是你的py文件名称，可以是绝对路径，app是在内部注册">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-07T10:16:54.000Z">
+<meta property="article:modified_time" content="2021-01-07T10:17:13.000Z">
 <meta property="article:author" content="NitrogenousFish">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/01/07/a-fast-view-of-FastAPI/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
-<title>NitrogenousFish's Site</title>
+<title>a fast view of FastAPI | NitrogenousFish's Site</title>
   
 
 
@@ -132,7 +134,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -145,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text"> 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%85%E8%A6%81%E7%9A%84%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text"> 必要的下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text"> 如何启动应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text"> 知识结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8"><span class="nav-number">5.</span> <span class="nav-text"> 快速启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0%E5%92%8C%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text"> 路径参数和查询参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text"> 路径参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0"><span class="nav-number">6.1.1.</span> <span class="nav-text"> 声明路径参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E8%B7%AF%E5%BE%84%E7%9A%84%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0%E6%94%AF%E6%8C%81%E4%BD%86%E6%98%AF%E5%B9%B3%E5%B8%B8%E6%9C%80%E5%A5%BD%E5%88%AB%E8%BF%99%E4%B9%88%E5%86%99"><span class="nav-number">6.1.2.</span> <span class="nav-text"> 包含路径的路径参数：支持，但是平常最好别这么写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0%E4%B8%8D%E6%98%AF%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text"> 查询参数：不是路径参数的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0"><span class="nav-number">6.2.1.</span> <span class="nav-text"> 声明查询参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0-%E5%8F%AF%E9%80%89%E4%B8%8E%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">6.2.2.</span> <span class="nav-text"> 查询参数 可选与默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0%E5%BF%85%E9%80%89"><span class="nav-number">6.2.3.</span> <span class="nav-text"> 查询参数必选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0-%E5%BF%85%E9%80%89-%E5%8F%AF%E9%80%89-%E9%BB%98%E8%AE%A4%E5%80%BC-%E6%80%BB%E7%BB%93"><span class="nav-number">6.2.4.</span> <span class="nav-text"> 查询参数 必选-可选-默认值 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E4%BD%93-post"><span class="nav-number">7.</span> <span class="nav-text"> 请求体 （POST）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%AF%B7%E6%B1%82%E4%BD%93pydantic"><span class="nav-number">7.1.</span> <span class="nav-text"> 创建请求体——Pydantic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90-%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0-%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0-%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="nav-number">7.1.1.</span> <span class="nav-text"> 如何解析 路径参数 查询参数 请求体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydantic%E6%A8%A1%E5%9E%8B%E5%A5%97%E5%A8%83%E8%AF%B7%E6%B1%82%E4%BD%93-%E5%B5%8C%E5%A5%97%E6%A8%A1%E5%9E%8B"><span class="nav-number">7.1.2.</span> <span class="nav-text"> Pydantic模型套娃（请求体-嵌套模型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pydantic%E6%A8%A1%E5%9E%8B%E6%B3%A8%E9%87%8A%E5%BC%BA%E5%8C%96%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%A2%9D%E5%A4%96%E4%BF%A1%E6%81%AF-%E4%BE%8B%E5%AD%90"><span class="nav-number">7.1.3.</span> <span class="nav-text"> Pydantic模型注释强化（模式的额外信息 - 例子）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%AF%B7%E6%B1%82%E4%BD%93body-%E8%AF%B7%E6%B1%82%E4%BD%93%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%80%BC"><span class="nav-number">7.2.</span> <span class="nav-text"> 创建请求体——Body 请求体中的单一值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#body%E5%9F%BA%E7%A1%80%E5%8D%95%E7%8B%AC%E9%94%AE"><span class="nav-number">7.2.1.</span> <span class="nav-text"> Body基础——单独键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E5%8D%95%E4%B8%AApydantic%E5%B5%8C%E5%85%A5%E8%AF%B7%E6%B1%82%E4%BD%93%E5%8F%82%E6%95%B0"><span class="nav-number">7.2.2.</span> <span class="nav-text"> 给单个Pydantic嵌入请求体参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E8%B7%AF%E5%BE%84%E5%8F%82%E6%95%B0%E5%92%8C%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0"><span class="nav-number">8.</span> <span class="nav-text"> 参数校验（路径参数和查询参数）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E6%9F%A5%E8%AF%A2"><span class="nav-number">8.1.</span> <span class="nav-text"> 参数校验基础用法——查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E7%9A%84%E5%86%99%E6%B3%95%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%88%97"><span class="nav-number">8.2.</span> <span class="nav-text"> 参数校验的写法顺序排列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E5%A4%9A%E5%80%BC-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span class="nav-number">8.3.</span> <span class="nav-text"> 校验参数列表&#x2F;多值 基础用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8%E5%A4%9A%E5%80%BC-%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-number">8.4.</span> <span class="nav-text"> 校验参数列表&#x2F;多值 默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#field-pydantic%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E4%B8%BE%E4%BE%8B"><span class="nav-number">8.5.</span> <span class="nav-text"> Field-Pydantic参数校验举例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E5%85%B3%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E7%9A%84%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82"><span class="nav-number">8.6.</span> <span class="nav-text"> 一些有关参数校验的技术细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E9%AA%8C%E5%8F%82%E6%95%B0%E9%AB%98%E7%BA%A7%E5%86%85%E5%AE%B9"><span class="nav-number">8.7.</span> <span class="nav-text"> 校验参数高级内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">9.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E7%B1%BB%E5%9E%8B%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B%E6%83%85"><span class="nav-number">10.</span> <span class="nav-text"> 有关类型想说的一些事情</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="nav-number">10.1.</span> <span class="nav-text"> 创建枚举类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pydantic%E6%94%AF%E6%8C%81%E6%9B%B4%E5%A4%9A%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">10.2.</span> <span class="nav-text"> pydantic支持更多的类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E5%85%B3http%E7%9A%84%E4%BA%8B%E6%83%85%E4%BD%86%E6%98%AF%E4%BD%9C%E4%B8%BA%E4%B8%80%E4%B8%AAapi%E6%B2%A1%E6%9C%89%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%85%B3%E5%BF%83%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="nav-number">11.</span> <span class="nav-text"> 一些有关HTTP的事情但是作为一个API没有什么需要关心的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">11.1.</span> <span class="nav-text"> 文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">12.</span> <span class="nav-text"> 后记</span></a></li></ol></div>
         </section>
         <!--/noindex-->
 
@@ -186,9 +189,10 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
@@ -208,9 +212,9 @@
       <meta itemprop="name" content="NitrogenousFish's Site">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/07/a-fast-view-of-FastAPI/" class="post-title-link" itemprop="url">a fast view of FastAPI</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          a fast view of FastAPI
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -234,7 +238,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>[toc]</p>
+        <p>[toc]</p>
 <h1 id="引言"><a class="markdownIt-Anchor" href="#引言"></a> 引言</h1>
 <p>这个教程是</p>
 <h1 id="必要的下载"><a class="markdownIt-Anchor" href="#必要的下载"></a> 必要的下载</h1>
@@ -474,7 +478,6 @@
 <li><a target="_blank" rel="noopener" href="https://fastapi.tiangolo.com/zh/tutorial/debugging/">Debugging</a><a target="_blank" rel="noopener" href="https://fastapi.tiangolo.com/zh/tutorial/debugging/">https://fastapi.tiangolo.com/zh/tutorial/debugging/</a>)</li>
 </ul>
 
-      
     </div>
 
     
@@ -482,240 +485,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/11/26/keybord/" rel="prev" title="键盘layout">
+                  <i class="fa fa-chevron-left"></i> 键盘layout
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/26/keybord/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="NitrogenousFish">
-      <meta itemprop="description" content="一个兴趣使然的小伙汁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NitrogenousFish's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/26/keybord/" class="post-title-link" itemprop="url">键盘layout</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-26 20:42:39" itemprop="dateCreated datePublished" datetime="2020-11-26T20:42:39+08:00">2020-11-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-12-05 21:57:44" itemprop="dateModified" datetime="2020-12-05T21:57:44+08:00">2020-12-05</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sum (a+b)_{2}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∑</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
-<p>行内测试<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mi>u</mi><mi>n</mi><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">func_{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
-<h1 id="75"><a class="markdownIt-Anchor" href="#75"></a> 75</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnJe0"><img src="https://s3.ax1x.com/2020/11/26/DBnJe0.md.png" alt="DBnJe0.md.png"></a></p>
-<h1 id="60"><a class="markdownIt-Anchor" href="#60"></a> 60</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn8Lq"><img src="https://s3.ax1x.com/2020/11/26/DBn8Lq.md.png" alt="DBn8Lq.md.png"></a></p>
-<h1 id="980"><a class="markdownIt-Anchor" href="#980"></a> 980</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn3yn"><img src="https://s3.ax1x.com/2020/11/26/DBn3yn.md.png" alt="DBn3yn.md.png"></a></p>
-<h1 id="alice"><a class="markdownIt-Anchor" href="#alice"></a> Alice</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn1Qs"><img src="https://s3.ax1x.com/2020/11/26/DBn1Qs.md.png" alt="DBn1Qs.md.png"></a></p>
-<h1 id="minila"><a class="markdownIt-Anchor" href="#minila"></a> minila</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnQzj"><img src="https://s3.ax1x.com/2020/11/26/DBnQzj.md.png" alt="DBnQzj.md.png"></a></p>
-<h1 id="65"><a class="markdownIt-Anchor" href="#65"></a> 65</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnMWQ"><img src="https://s3.ax1x.com/2020/11/26/DBnMWQ.md.png" alt="DBnMWQ.md.png"></a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/26/%E5%B8%B8%E7%94%A8%E7%AB%99%E7%82%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="NitrogenousFish">
-      <meta itemprop="description" content="一个兴趣使然的小伙汁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NitrogenousFish's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/26/%E5%B8%B8%E7%94%A8%E7%AB%99%E7%82%B9/" class="post-title-link" itemprop="url">常用站点</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2020-11-26 13:42:44 / Modified: 14:11:27" itemprop="dateCreated datePublished" datetime="2020-11-26T13:42:44+08:00">2020-11-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="实用工具"><a class="markdownIt-Anchor" href="#实用工具"></a> 实用工具</h1>
-<p>在线LaTeX公式编辑器：<a target="_blank" rel="noopener" href="https://www.latexlive.com/">https://www.latexlive.com/</a></p>
-<p>超详细hexo建站：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017986794">https://segmentfault.com/a/1190000017986794</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="NitrogenousFish">
-      <meta itemprop="description" content="一个兴趣使然的小伙汁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NitrogenousFish's Site">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/26/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2020-11-26 11:50:32" itemprop="dateCreated datePublished" datetime="2020-11-26T11:50:32+08:00">2020-11-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
