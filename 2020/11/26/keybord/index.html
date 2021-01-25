@@ -21,14 +21,14 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-<meta name="description" content="∑(a+b)2\sum (a+b)_{2} ∑(a+b)2​ 行内测试func2func_{2}func2​  75   60   980   Alice   minila   65">
+<meta name="description" content="∑(a+b)2\sum (a+b)_{2} ∑(a+b)2​ 行内测试func2func_{2}func2​  75   60">
 <meta property="og:type" content="article">
 <meta property="og:title" content="键盘layout">
 <meta property="og:url" content="http://example.com/2020/11/26/keybord/index.html">
 <meta property="og:site_name" content="NitrogenousFish&#39;s Site">
-<meta property="og:description" content="∑(a+b)2\sum (a+b)_{2} ∑(a+b)2​ 行内测试func2func_{2}func2​  75   60   980   Alice   minila   65">
+<meta property="og:description" content="∑(a+b)2\sum (a+b)_{2} ∑(a+b)2​ 行内测试func2func_{2}func2​  75   60">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s3.ax1x.com/2020/11/26/DBnJe0.md.png">
 <meta property="og:image" content="https://s3.ax1x.com/2020/11/26/DBn8Lq.md.png">
@@ -105,6 +105,9 @@
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -120,15 +123,86 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -166,10 +240,23 @@
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">4</span>
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -190,6 +277,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -251,21 +339,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sum (a+b)_{2}
+        <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sum (a+b)_{2}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.6000100000000002em;vertical-align:-0.55001em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∑</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 <p>行内测试<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mi>u</mi><mi>n</mi><msub><mi>c</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">func_{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
 <h1 id="75"><a class="markdownIt-Anchor" href="#75"></a> 75</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnJe0"><img src="https://s3.ax1x.com/2020/11/26/DBnJe0.md.png" alt="DBnJe0.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnJe0"><img src="https://s3.ax1x.com/2020/11/26/DBnJe0.md.png" alt="DBnJe0.md.png" /></a></p>
 <h1 id="60"><a class="markdownIt-Anchor" href="#60"></a> 60</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn8Lq"><img src="https://s3.ax1x.com/2020/11/26/DBn8Lq.md.png" alt="DBn8Lq.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn8Lq"><img src="https://s3.ax1x.com/2020/11/26/DBn8Lq.md.png" alt="DBn8Lq.md.png" /></a></p>
 <h1 id="980"><a class="markdownIt-Anchor" href="#980"></a> 980</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn3yn"><img src="https://s3.ax1x.com/2020/11/26/DBn3yn.md.png" alt="DBn3yn.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn3yn"><img src="https://s3.ax1x.com/2020/11/26/DBn3yn.md.png" alt="DBn3yn.md.png" /></a></p>
 <h1 id="alice"><a class="markdownIt-Anchor" href="#alice"></a> Alice</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn1Qs"><img src="https://s3.ax1x.com/2020/11/26/DBn1Qs.md.png" alt="DBn1Qs.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBn1Qs"><img src="https://s3.ax1x.com/2020/11/26/DBn1Qs.md.png" alt="DBn1Qs.md.png" /></a></p>
 <h1 id="minila"><a class="markdownIt-Anchor" href="#minila"></a> minila</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnQzj"><img src="https://s3.ax1x.com/2020/11/26/DBnQzj.md.png" alt="DBnQzj.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnQzj"><img src="https://s3.ax1x.com/2020/11/26/DBnQzj.md.png" alt="DBnQzj.md.png" /></a></p>
 <h1 id="65"><a class="markdownIt-Anchor" href="#65"></a> 65</h1>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnMWQ"><img src="https://s3.ax1x.com/2020/11/26/DBnMWQ.md.png" alt="DBnMWQ.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/DBnMWQ"><img src="https://s3.ax1x.com/2020/11/26/DBnMWQ.md.png" alt="DBnMWQ.md.png" /></a></p>
 
     </div>
 
@@ -347,6 +435,7 @@
 
   
 
+<script src="/js/local-search.js"></script>
 
 
 
