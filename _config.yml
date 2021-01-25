@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: NitrogenousFish's Site
+subtitle: '互联网上给自己的小窝'
+description: '一个兴趣使然的小伙汁'
 keywords:
-author: John Doe
+author: NitrogenousFish
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
@@ -97,8 +97,8 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: landscape
+## Thmes: https://hexo.io/themes/
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -107,3 +107,27 @@ deploy:
   repo:
     github: https://github.com/NITROGENousFish/NITROGENousFish.github.io.git
   branch: master
+
+
+darkmode: true
+cache:
+  enable: true
+
+#scheme: Muse
+# scheme: Mist
+# scheme: Pisces
+# scheme: Gemini
+
+# 首页自动缩略，不需要more标签，插件：hexo-excerpt
+excerpt:
+  depth: 5  #按层来算，也就是按代码块来算
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+
+# 文章检索功能 插件：hexo-generator-searchdb
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
