@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo Markdown 进阶</title>
+    <url>/2021/01/25/Hexo-Markdown-%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<h1 id="note标签"><a class="markdownIt-Anchor" href="#note标签"></a> Note标签</h1>
+<blockquote>
+<p>【内容来源】Hexo自带还是NexT主题自带我不清楚，可以肯定不是插件<br />
+但是我知道这种写法是常用的一种markdown写法<br />
+在 <strong>VuePress</strong> 中一样的是这种写法</p>
+</blockquote>
+<p>通过 note 标签可以为段落 <strong>添加背景色</strong> ，用于进行内容的提示<br />
+一共有如下五种： <code>primary</code> <code>success</code> <code>info</code> <code>warning</code> <code>danger</code></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] %&#125;</span><br><span class="line">请把‘class’替换成上面5个的一个 (支持行内标签)</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<div class="note default"><p>default</p>
+</div>
+<div class="note primary"><p>primary</p>
+</div>
+<div class="note success"><p>success</p>
+</div>
+<div class="note info"><p>info·</p>
+</div>
+<div class="note warning"><p>warning</p>
+</div>
+<div class="note danger"><p>danger</p>
+</div>
+<p>如果上述的 <code>class</code> 标签写成其他的任何内容，比如这样</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% note 点击这里查看折叠的内容 %&#125;</span><br><span class="line">是不是非常的有趣，适合描述扩展的知识</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
+<details class="note "><summary><p>点击这里查看折叠的内容</p>
+</summary>
+<p>是不是非常的有趣，适合描述扩展的知识</p>
+
+</details>
+<h1 id="代码块-进阶-未完成"><a class="markdownIt-Anchor" href="#代码块-进阶-未完成"></a> 代码块 进阶 (未完成)</h1>
+<div class="note warning"><p>这里还有一些插件和扩展功能还没有完全的整合好<br />
+需要进一步的进行优化</p>
+</div>
+<ul>
+<li>langugae：语言名称，引导渲染引擎正确解析并高亮显示关键字</li>
+<li>title：代码块标题，将会显示在左上角</li>
+<li>url：链接地址，如果没有指定 link text 则会在右上角显示 link</li>
+<li>link text：链接名称，指定 url 后有效，将会显示在右上角</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">​&#96;&#96;&#96; [language] [title] [url] [link text]</span><br><span class="line">code snippet</span><br><span class="line">​&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<p>一个最简单的例子</p>
+<figure class="highlight yml"><figcaption><span>_config.yml diff</span></figcaption><table><tr><td class="code"><pre><span class="line"> <span class="attr">highlight:</span></span><br><span class="line">   <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">line_number:</span> <span class="literal">false</span></span><br><span class="line"><span class="bullet">-</span>  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">+</span>  <span class="attr">auto_detect:</span> <span class="literal">true</span></span><br><span class="line">   <span class="attr">tab_replace:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>line_number:false</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Class <span class="title">HelloWorldClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.Out.printl(<span class="string">&quot;Hello World&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>写作</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Self Reflection / 2020.08~2021.02</title>
     <url>/2021/01/25/Self-Reflection-2020-08-2021-02/</url>
     <content><![CDATA[<blockquote>
@@ -57,7 +108,21 @@
   <entry>
     <title>Hello World</title>
     <url>/2020/11/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<h2 id="我个人常用的指令"><a class="markdownIt-Anchor" href="#我个人常用的指令"></a> 我个人常用的指令</h2>
+<h2 id="一键合集慎用"><a class="markdownIt-Anchor" href="#一键合集慎用"></a> 一键合集（慎用）</h2>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">git branch                         # 查看本地分支</span><br><span class="line">git branch -r                      # 查看远程分支</span><br><span class="line">git push origin allfile:allfile    # 将本地allfile分支push到远程allfile分支</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="hexo的服务器调试模式"><a class="markdownIt-Anchor" href="#hexo的服务器调试模式"></a> hexo的服务器调试模式</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
+<h3 id="hexo内容部署到线上环境"><a class="markdownIt-Anchor" href="#hexo内容部署到线上环境"></a> hexo内容部署到线上环境</h3>
+<div class="note info"><p>这里上传的是经过生成的文件<br />
+请一定要在hexo初始配置中完成自动git的配置才能用这个命令</p>
+</div>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="hexo原始文件部署到其他分支"><a class="markdownIt-Anchor" href="#hexo原始文件部署到其他分支"></a> hexo原始文件部署到其他分支</h3>
+<div class="note info"><p>请确认分支情况</p>
+</div>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch                         # 查看本地分支</span><br><span class="line">git branch -r                      # 查看远程分支</span><br><span class="line">git push origin allfile:allfile    # 将本地allfile分支push到远程allfile分支</span><br></pre></td></tr></table></figure>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
 <h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
@@ -123,10 +188,9 @@
 <h1 id="快速启动"><a class="markdownIt-Anchor" href="#快速启动"></a> 快速启动</h1>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.get(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">root</span>():</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Hello World&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="路径参数和查询参数"><a class="markdownIt-Anchor" href="#路径参数和查询参数"></a> 路径参数和查询参数</h1>
-<blockquote>
-<p>💯 除非声明了是Optinal，否则没有默认值的参数都是必须的参数</p>
+<div class="note info"><p>💯 除非声明了是Optinal，否则没有默认值的参数都是必须的参数</p>
 <p>引自（知名摸鱼专家：NitrogenousFish）</p>
-</blockquote>
+</div>
 <h2 id="路径参数"><a class="markdownIt-Anchor" href="#路径参数"></a> 路径参数</h2>
 <h3 id="声明路径参数"><a class="markdownIt-Anchor" href="#声明路径参数"></a> 声明路径参数</h3>
 <ol>
